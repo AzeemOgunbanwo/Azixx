@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "azixx-website",
-  "homepage": "https://azeemogunbanwo.github.io/Azixx",
+  "homepage": "https://azeemogunbanwo.github.io/Azixx/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
