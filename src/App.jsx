@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Route, Routes , Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Music from './pages/Music'
 import Videos from './pages/Videos'
@@ -8,10 +8,7 @@ import TopBar from './components/TopBar'
 import HomeContent from './components/HomeContent'
 import { GiHamburgerMenu } from "react-icons/gi";
 import './App.css'
-import ReactPlayer from "react-player"
-import VideoPlayer from './components/VideoPlayer'
 import VideoSlider from './components/VideoSlider'
-import VideoPage from './components/VideoPage'
 import MusicSlider from './components/MusicSlider'
 
 function App() {
