@@ -10,6 +10,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import './App.css'
 import VideoSlider from './components/VideoSlider'
 import MusicSlider from './components/MusicSlider'
+import './index.css'
 
 function App() {
   const [showNav, setShowNav] = useState(false);
