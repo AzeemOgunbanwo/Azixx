@@ -9,11 +9,12 @@ import Poison from '../assets/poison.jpg'
 import Spotify from '../assets/spotify.png'
 import AppleMusic from '../assets/apple.png'
 import Youtube from '../assets/youtube.png'
+import Audiomack from '../assets/audiomack.png'
 
 const musics = [
-    {id: Beyond , title: "Beyond EP", refSpotify: "4dRt72zKAOVLWqk77CyBmA?si=3XvlpfarTIyz9gE-8bWGFA" , refApple: "beyond-ep/1755071391" , refYoutube: "OLAK5uy_k7WVeQMec3Y_uL-hw0U9g_6nDSsBNw12k&si=pC37Ou9TnM7mpZbf"} ,
+    {id: Beyond , title: "Beyond EP", refSpotify: "4dRt72zKAOVLWqk77CyBmA?si=3XvlpfarTIyz9gE-8bWGFA" , refApple: "beyond-ep/1755071391" , refYoutube: "OLAK5uy_k7WVeQMec3Y_uL-hw0U9g_6nDSsBNw12k&si=pC37Ou9TnM7mpZbf" , refAudiomack: "beyond"} ,
 
-    {id: Poison , title: "Poison EP", refSpotify: "43AEJ0fL93JGl398s8DKoU?si=76EVYYatThGb-yt1utWjIQ", refApple: "poison-ep/1609693976" , refYoutube: "OLAK5uy_k6tz0TEQmfAd7VJavyIijupQauhQY1DmQ&si=iAF0zDEKHESEhZZr"}
+    {id: Poison , title: "Poison EP", refSpotify: "43AEJ0fL93JGl398s8DKoU?si=76EVYYatThGb-yt1utWjIQ", refApple: "poison-ep/1609693976" , refYoutube: "OLAK5uy_k6tz0TEQmfAd7VJavyIijupQauhQY1DmQ&si=iAF0zDEKHESEhZZr" , refAudiomack: "poisonep"}
 ]
 
 
@@ -55,6 +56,12 @@ const MusicSlider = () => {
                             target="_blank"
                             rel="noopener noreferrer">
                                 <img src={Youtube} alt="Spotify Link" />
+                            </a>                             
+                            <a 
+                            href={`https://audiomack.com/Azixx/album/${music.refAudiomack}`}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                <img src={Audiomack} alt="Spotify Link" />
                             </a>                             
                         </div>
                         
