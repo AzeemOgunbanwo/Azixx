@@ -8,6 +8,9 @@ export default defineConfig({
   base: "/Azixx/",
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      input: 'index.html'  // ✅ Ensure Vite knows where to start
+    }
   },
   server: {
     historyApiFallback: true,
