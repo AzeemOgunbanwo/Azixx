@@ -11,6 +11,7 @@ import './App.css'
 import VideoSlider from './components/VideoSlider'
 import MusicSlider from './components/MusicSlider'
 import './index.css'
+import Footer from './components/Footer'
 
 function App() {
   const [showNav, setShowNav] = useState(false);
@@ -31,9 +32,11 @@ function App() {
         </div>
 
         <VideoSlider />
-        {/* <VideoPage /> */}
+        
 
         <MusicSlider />
+
+        <Footer />
 
         <div className='main'>
           <Routes>
