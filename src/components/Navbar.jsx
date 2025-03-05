@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
+import {HashLink as Link} from 'react-router-hash-link'
 
 const Navbar = ({show}) => {
     return (
         <div className={show ? "sidenav active" : "sidenav"}>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/music">Music</a></li>
-                <li><a href="/videos">Videos</a></li>
+                <li><Link smooth to="#home"> Home </Link></li>
+                <li><Link smooth to="#videos"> Videos </Link></li>
+                <li><Link smooth to="#music"> Music </Link></li>
             </ul>
         </div>
     )

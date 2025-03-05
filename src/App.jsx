@@ -20,33 +20,32 @@ function App() {
   return (
     <>
       <Router>
-        <header>
-          <GiHamburgerMenu onClick={() => setShowNav(!showNav)} />
-          <div className="topbar"> <TopBar /> </div>
-        </header>
 
-        <Navbar show={showNav} /> 
+        <section id="home">
+          <header>
+            <GiHamburgerMenu onClick={() => setShowNav(!showNav)} />
+            <div className="topbar"> <TopBar /> </div>
+          </header>
 
-        <div className="homecontent">
-          <HomeContent />
-        </div>
+          <Navbar show={showNav} /> 
 
-        <VideoSlider />
+          <div className="homecontent">
+            <HomeContent />
+          </div>
+
+        </section>
+
+        <section id="videos">
+          <VideoSlider />
+        </section>
         
-
-        <MusicSlider />
+        <section id="music">
+          <MusicSlider />
+        </section>
 
         <Footer />
 
-        <div className='main'>
-          <Routes>
-            <Route path='/'  element={<Home />} />
-            <Route path='/music'  element={<Music />} />
-            <Route path='/videos'  element={<Videos />} />
-            {/* <Route path="/video-slider" element={<VideoSlider />} />
-            <Route path="/video/:id" element={<VideoPage />} /> */}
-          </Routes>
-        </div>
+        
 
         
       </Router>  
