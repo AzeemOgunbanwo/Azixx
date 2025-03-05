@@ -105,8 +105,8 @@ header svg:hover {
 .homecontent img {
   position: relative;
   top: 50px;
-  min-width: 100vw;
-  max-height: 94vh;
+  width: 100vw;
+  height: 94vh;
   object-fit: cover;
 }
 
