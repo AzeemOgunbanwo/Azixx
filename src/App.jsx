@@ -1,8 +1,5 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import Music from './pages/Music'
-import Videos from './pages/Videos'
 import Navbar from './components/Navbar'
 import TopBar from './components/TopBar'
 import HomeContent from './components/HomeContent'

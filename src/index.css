@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -27,11 +32,11 @@ header {
 }
 
 .sidenav {
-  width: 500px;
+  /* width: 500px; */
+  width: 100%;
   background: #180118;
   position: absolute;
   height: 5vh;
-  padding: 0 30px;
   left: -150%;
   border-radius: 0 0 10px 0px;
   overflow: hidden;
@@ -44,13 +49,6 @@ header {
 .sidenav.active {
   left: 0;
   z-index: 900;
-}
-
-.sidenav ul {
-  display: flex;
-  flex-direction: row;
-  gap: 5em;
-  transform: translateY(-25px);
 }
 
 ul {
@@ -84,6 +82,14 @@ ul li a {
   transition: 0.3s ease-in;
 }
 
+.sidenav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
 .sidenav ul li a:hover,
 .sidenav ul li a.active {
   text-shadow: 0 0 10px #aa86b1;
@@ -105,15 +111,110 @@ header svg:hover {
 .homecontent img {
   position: relative;
   top: 50px;
-  width: 100vw;
-  height: 94vh;
+  max-width: 100%;
+  height: 100vh;
   object-fit: cover;
 }
+
+@keyframes fontLoop {
+  0% { 
+    text-shadow: 0 0 0px #aa86b1;
+   }
+  100% { 
+    text-shadow: 0 0 30px #aa86b1;
+    right: 26vw;
+    }
+}
+@keyframes lightLoop {
+  0% { 
+    text-shadow: 0 0 0px #aa86b1;
+   }
+  100% { 
+    text-shadow: 0 0 30px #aa86b1;
+    }
+}
+
+@media (min-width: 1001px) {
+  .homecontent #small {
+    position: absolute;
+    text-align: center;
+    font-size: clamp(60px, 4.5vw,75px);
+    top: 50vh;
+    right: 5vw;
+    transition: 0.5s ease-in-out;
+    animation: lightLoop 1s   infinite alternate ease-in-out;
+  }
+
+  .homecontent #small a {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .homecontent #small:hover {
+    opacity: 0.7;
+    
+  }
+}
+
+@media (max-width: 1000px) {
+  .homecontent #small {
+    position: absolute;
+    font-size: clamp(32px, 5vw, 42px);
+    white-space: nowrap;
+    writing-mode: vertical-lr;
+    top: 20vh;
+    right: 25vw;
+    transition: 0.5s ease-in-out;
+    animation: fontLoop 1s   infinite alternate ease-in-out;
+  }
+
+  .homecontent #small a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .homecontent #small:hover {
+    opacity: 0.7;
+    
+  }
+
+  
+}
+
+@media (max-width: 800px) {
+  .homecontent #small {
+    position: absolute;
+    font-size: clamp(32px, 6vw, 45px);
+    white-space: nowrap;
+    writing-mode: vertical-lr;
+    top: 29vh;
+    right: 20vw;
+    transition: 0.5s ease-in-out;
+    animation: fontLoop 1s   infinite alternate ease-in-out;
+  }
+
+  .homecontent #small:hover {
+    opacity: 0.7;
+    
+  }
+
+  .homecontent #small a {
+    text-decoration: none;
+    color: white;
+  }
+
+  
+}
+
+
 
 .topbar {
   position: absolute;
   right: 10px;
-  top: -4px;
+  top: 0.5vh;
+  
 }
 
 .topbar ul {
@@ -144,24 +245,12 @@ header .topbar svg:hover {
   font-size: 20px;
 }
 
-.homecontent h1 {
-  font-family: Poppins, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 60px;
-  z-index: 300;
-  position: absolute;
-  color: rgb(250, 250, 250);
-  text-align: center;
-  right: 80px;
-  top: 45%;
-  text-shadow: 5px 5px 15px #aa86b1;
-}
-
 
 
 .videoslider {
   background-color: #180118;
-  height: 120vh;
-  padding-top: min(4em, 10%);
+  height: 115vh;
+  padding-top: min(5em, 20%);
 }
 
 .videoslider h1 {
@@ -169,6 +258,8 @@ header .topbar svg:hover {
   font-size: clamp(3rem, 4vw, 5rem);
   text-shadow: 0 0 5px #913fa2;
   font-family: Poppins, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
 }
 
 
@@ -245,7 +336,8 @@ header .topbar svg:hover {
 .music-slider {
   background-color: #b194b7;
   margin-top: -7vh;
-  height: 1170px;
+  /* height: 1100px; */
+  max-height: 150vh;
 }
 
 .music-slider h1 {
@@ -259,27 +351,6 @@ header .topbar svg:hover {
   font-family: Poppins, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.music-slider img {
-  width: 30vw;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px black;
-  position: relative;
-  top: 20px;
-}
-
-.music-slider .music-swiper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: relative;
-  height: 1100px;
-}
-
-.music-slider .music-swiper-link {
-  text-decoration: none;
-}
-
 .music-slider p {
   color: white;
   text-align: center;
@@ -288,39 +359,48 @@ header .topbar svg:hover {
   font-size: clamp(15px, 3.5vw, 30px);
   margin-bottom:auto ;
   font-weight: bold;
-
+  margin: 0.5vh 0;
+  margin-bottom: 2vh;
 }
+
+.music-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 0em;
+  
+}
+
+.music-container img {
+  width: 30vw;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #180118;
+}
+
+.music-container .streaming-links img {
+  width: 20vw;
+  height: 4vh;
+  object-fit: contain;
+  transition: 0.5s ease-in-out;
+}
+
+
 
 .streaming-links {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  /* margin-top: 3vh; */
-  gap: 2vh;
-  z-index: 1000000000000;
+  align-items: center;
+  margin-bottom: 5vh;
 }
 
-.streaming-links img {
-  height: clamp(30px, 4vh, 40px);
-  width: clamp(110px, 10vw, 200px);
-  position: relative;
-  border: 2px solid black;
-  background-color: transparent;
-  transform: translateY(65vh);
-  object-fit: scale-down;
-  box-shadow: 0px 0 5px #180118;
-  transition: 0.3s ease-in;
-}
 
 .streaming-links img:hover {
   background-color: white;
 }
 
 .footer {
-  height: 150px;
+  height: 12vh;
   background-color: #180118;
   overflow: hidden;
 }
@@ -329,12 +409,17 @@ header .topbar svg:hover {
   position: relative;
   text-align: center;
   top: 30px;
+  font-size: clamp(13px, 3vw, 2px);
+  margin-bottom: 1vh;
 }
 
 .footer .copy {
   color: rgba(209, 209, 209, 0.394);
-  font-size: 13px;
+  font-size: (10px, 2vw, 13px);
 }
+
+
+
 
 /* @media (max-width: 1289px) {
   .homecontent h1 {
